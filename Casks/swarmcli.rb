@@ -13,18 +13,28 @@ cask "swarmcli" do
 
   on_macos do
     url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Darwin_all.tar.gz"
-    sha256 "2b103a26367ca5dd3cbe8bd4df677118a2da88a769cc00a7beb9cbb7723e0277"
+    sha256 "6ade510848e3f42ed2d2e5d5dc3d4635341821b4acb88ccebf8c4905b0b6877a"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "795d8e2fc187615bad695e6f7c15450b67eca27bbabec912385f37b839c9fde8"
+      sha256 "7813de881db9e8940c59b3c3b8afdc7d07a35f6f1cb25da23d8d6156d3dba748"
     end
     on_arm do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_arm64.tar.gz"
-      sha256 "b243dfe98df71729ce500d77140fedd8d46cc29149c74ce50e629c91f81b7195"
+      sha256 "2e88ab430b4917685e3a0ae7e78b64df42e89217c9eb68569dba4ee22efc9e77"
     end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/swarmcli"]
+    end
+  end
+
+  caveats do
+    "To run swarmcli for the first time, you may need to allow it in System Preferences > Security & Privacy."
   end
 
   # No zap stanza required
