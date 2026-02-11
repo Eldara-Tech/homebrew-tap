@@ -10,7 +10,7 @@ class Swarmcli < Formula
 
   on_macos do
     url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Darwin_all.tar.gz"
-    sha256 "39c57afcb2f576c0b40f9bf3edad40417b633689e9b9587adcfb2d5507686d3d"
+    sha256 "768e9ed5be38ef64508d34070a1938e1729ad556088f66a3677f20758d03f646"
 
     def install
       bin.install "swarmcli"
@@ -20,21 +20,21 @@ class Swarmcli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "03345c9a103a96327969f690d92b9ad95364c23f97ebdbcbcbaefbd02ff60fcb"
+      sha256 "e7af5efa0eb8aa5d01f55a37eb2caaa31caf2b469719dfe11be963bc861e134a"
       def install
         bin.install "swarmcli"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Linux_armv6.tar.gz"
-      sha256 "6d39f639f37eef7d0bac3b99019e3640f11692f3c4972957f11e490991793d3a"
+      sha256 "d16fdddd4b0700cce1fd7c3d7ada603a8749c551301a72e0e652f5beef3bd556"
       def install
         bin.install "swarmcli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Linux_arm64.tar.gz"
-      sha256 "9dbe8c47452008cc98728b5858d5df3dd373445f9db087bd27fd59cfcd613280"
+      sha256 "ca4ce0d14568f1e7be207a06fb7d40fb896e824b3fe71bdc85c32dad25fe8103"
       def install
         bin.install "swarmcli"
       end
