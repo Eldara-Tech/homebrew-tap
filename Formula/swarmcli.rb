@@ -5,12 +5,12 @@
 class Swarmcli < Formula
   desc "Docker Swarm TUI management tool"
   homepage "https://swarmcli.io"
-  version "1.3.1"
+  version "1.3.2"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Darwin_all.tar.gz"
-    sha256 "98bf98cf2028b6af39abad47fffcc8a7d26c8f7f77138534c73e1dea28764f27"
+    url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.2/swarmcli_Darwin_all.tar.gz"
+    sha256 "68c175a028b2674540477f6db04f2d5cbfd73fe447b755b3db46175afb16adbb"
 
     def install
       bin.install "swarmcli"
@@ -19,22 +19,22 @@ class Swarmcli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "ea9ddd656c6b33e8a7eb05f0f93c56aa7072822cee8fb64ccf1ff23bea5d8eb0"
+      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.2/swarmcli_Linux_x86_64.tar.gz"
+      sha256 "caea8bdc161447824177ecf14dd9366b632ecaaf8a852bf50561a447302a53a3"
       def install
         bin.install "swarmcli"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Linux_armv6.tar.gz"
-      sha256 "a072304cc7b135b099a0abaaf1f99790e74b8a9ea38a88154ef55af3c316da66"
+      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.2/swarmcli_Linux_armv6.tar.gz"
+      sha256 "f9465b882218cf0c5c30721be27e232e3bc0972035313450494d2be867c1ddca"
       def install
         bin.install "swarmcli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.1/swarmcli_Linux_arm64.tar.gz"
-      sha256 "445579115ed5cdf3be78211c34b7d9f588b9e322a942279a21fc0ef664aa1b1a"
+      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.3.2/swarmcli_Linux_arm64.tar.gz"
+      sha256 "28876b1ab310ebb64a0be688df9b17b407f39f63229b25126293bd6a068b70d9"
       def install
         bin.install "swarmcli"
       end
