@@ -5,12 +5,12 @@
 class Swarmcli < Formula
   desc "Docker Swarm TUI management tool"
   homepage "https://swarmcli.io"
-  version "1.5.1"
+  version "1.6.0-rc1"
   license "Apache-2.0"
 
   on_macos do
-    url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.5.1/swarmcli_Darwin_all.tar.gz"
-    sha256 "f93aa0c1c8ce4d2c2ce3acf68b3dab4ba1a740815dfde48ed0b5078da081a78a"
+    url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.6.0-rc1/swarmcli_Darwin_all.tar.gz"
+    sha256 "d63bd73ece3e96a5445d9ff0dd88bfdd04cfd0397d0dc58b1ec174c656b5a167"
 
     define_method(:install) do
       bin.install "swarmcli"
@@ -19,22 +19,22 @@ class Swarmcli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.5.1/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "ead369db02326ce742731e7ce3ba311953d7ce9d3094ddd9c8c7c953879504b1"
+      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.6.0-rc1/swarmcli_Linux_x86_64.tar.gz"
+      sha256 "7496b955f7c487eb250c7ec27f32f4b897dd9600e9372556e4b6588612fadaa8"
       define_method(:install) do
         bin.install "swarmcli"
       end
     end
     if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
-      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.5.1/swarmcli_Linux_armv6.tar.gz"
-      sha256 "62683efc79b3188878c0f9ff3df1843a2cc9c04ea5cee1078b1b02946bde550c"
+      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.6.0-rc1/swarmcli_Linux_armv6.tar.gz"
+      sha256 "3f65651b01766d0a5e406589e17b9bf996e79cf4ef403633b9aac54b643bed11"
       define_method(:install) do
         bin.install "swarmcli"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.5.1/swarmcli_Linux_arm64.tar.gz"
-      sha256 "3f1dd2255b3a6bbaec4479d4d3c3aace0ba1faf598b8d63cf514bc2c07cbd258"
+      url "https://github.com/Eldara-Tech/swarmcli/releases/download/v1.6.0-rc1/swarmcli_Linux_arm64.tar.gz"
+      sha256 "916e3b4ce21e1ff6a8b8c57f5017c99162b418a576a65d1e40ed63eef96e899c"
       define_method(:install) do
         bin.install "swarmcli"
       end
