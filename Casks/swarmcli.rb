@@ -3,7 +3,7 @@ cask "swarmcli" do
   name "swarmcli"
   desc "Docker Swarm TUI management tool"
   homepage "https://swarmcli.io"
-  version "1.3.0"
+  version "1.7.1-rc1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,28 +13,29 @@ cask "swarmcli" do
 
   on_macos do
     url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Darwin_all.tar.gz"
-    sha256 "6ade510848e3f42ed2d2e5d5dc3d4635341821b4acb88ccebf8c4905b0b6877a"
+    sha256 "3fd03e1faec91e5e542caa70e158914c28a218b1417b4b92d7461cd0b493c99a"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "7813de881db9e8940c59b3c3b8afdc7d07a35f6f1cb25da23d8d6156d3dba748"
+      sha256 "9f1bf586129455d5efa14d4cd9523873503871151408e67ae452674db58108af"
     end
     on_arm do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_arm64.tar.gz"
-      sha256 "2e88ab430b4917685e3a0ae7e78b64df42e89217c9eb68569dba4ee22efc9e77"
+      sha256 "1e2591bae208a45a8633c76c37ef14534f8e661da41bbf45cfa7111541d74ee1"
     end
   end
+
+  conflicts_with cask: [
+      "swarmcli-be",
+    ]
 
   postflight do
     if OS.mac?
-      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/swarmcli"]
+      system_command "/usr/bin/xattr",
+                     args: ["-dr", "com.apple.quarantine", "#{staged_path}/swarmcli"]
     end
-  end
-
-  caveats do
-    "To run swarmcli for the first time, you may need to allow it in System Preferences > Security & Privacy."
   end
 
   # No zap stanza required
