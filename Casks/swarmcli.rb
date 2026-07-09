@@ -3,7 +3,7 @@ cask "swarmcli" do
   name "swarmcli"
   desc "Docker Swarm TUI management tool"
   homepage "https://swarmcli.io"
-  version "1.10.0"
+  version "1.11.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -13,17 +13,17 @@ cask "swarmcli" do
 
   on_macos do
     url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Darwin_all.tar.gz"
-    sha256 "5909ffeeec061541aa26472033f3909900af106d6baf76f9086f6acfc48a4948"
+    sha256 "334583cabed3ddc4be4c673ba63e7e84b0086de45c9ee9c6b77f095570f89198"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "0beeca4cc08daa284e29acda5984c33ac363e63cdd0c268d010a68b75bdffa74"
+      sha256 "a20f246490f4ab1385b04681d044e4bd46c40435a574a59f7e5ee3ea0c3fd4e2"
     end
     on_arm do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_arm64.tar.gz"
-      sha256 "07839126533feac0c05dc4bc8a03c8ee2c74dec9e17646333755903eedfe8401"
+      sha256 "e5d427c3de1099acac4e2681f4dc2b7f1545792c128dfbcfd534758a698ee92e"
     end
   end
 
