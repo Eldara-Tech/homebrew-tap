@@ -5,7 +5,7 @@ cask "swarmcli-be" do
   name "swarmcli-be"
   desc "Docker Swarm TUI management tool (retired: install swarmcli)"
   homepage "https://swarmcli.io"
-  version "2.2.0"
+  version "2.2.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,17 +15,17 @@ cask "swarmcli-be" do
 
   on_macos do
     url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Darwin_all.tar.gz"
-    sha256 "60e49230777e95e0a04752b32b6f9b51e17bf14efa2f0305e93d6bd3301eafa5"
+    sha256 "9acad26d09225c1023aa87d180950be6cc44911bdcdfbd0e7e72ee42ac9393e2"
   end
 
   on_linux do
     on_intel do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_x86_64.tar.gz"
-      sha256 "b0248a31ea1bd9db609594b048ac7675c03e8779ed749ffadd8c8f43badf7042"
+      sha256 "c7af6a1b1b8f072f707a6780e00f9634b193399a05a5938fa186d75c7d121e35"
     end
     on_arm do
       url "https://github.com/Eldara-Tech/swarmcli/releases/download/v#{version}/swarmcli_Linux_arm64.tar.gz"
-      sha256 "7fbdfe89e83e8ec6b3bdd3ac0a337acf80b883037886a60965d609d0d2a260ef"
+      sha256 "b02af95f40585b3cff1edf854f4fe3ec386f8fdf77c8cb944f17da9d31965a5e"
     end
   end
 
@@ -33,13 +33,6 @@ cask "swarmcli-be" do
       "swarmcli",
       "swarmcli-oss",
     ]
-
-  postflight do
-    if OS.mac?
-      system_command "/usr/bin/xattr",
-                     args: ["-dr", "com.apple.quarantine", "#{staged_path}/swarmcli"]
-    end
-  end
 
   # No zap stanza required
 end
